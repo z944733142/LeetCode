@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Walk {
     static int min = 999;
+
     static int a[][] = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 0, 0, 1, 0, 0, 1, 0, 1},
