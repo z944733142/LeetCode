@@ -1,7 +1,16 @@
 package Algorithms;
 
 import java.util.HashMap;
+/*
+给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
 
+示例 1:
+
+输入: "abcabcbb"
+输出: 3
+解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+示例 2:
+ */
 public class LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
         new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("abba");
@@ -17,32 +26,9 @@ public class LongestSubstringWithoutRepeatingCharacters {
             }
             max = Math.max(max, j - i + 1);
             hashMap.put(s.charAt(j), j);
-            System.out.println(max + " " + i + " " + j);
         }
         return max;
     }
-
-//    public int lengthOfLongestSubstring(String s) {
-//        if(s == null)
-//            return 0;
-//        int start = 0;
-//        int maxLen = 0;
-//        for(int i = 0; i < s.length(); i++){
-//            int j = start;
-//            for(; j < i; j++){
-//                if( s.charAt(j) == s.charAt(i)){
-//                    break;
-//                }
-//            }
-//            if(j < i){
-//                start = j + 1;
-//            }
-//            else{
-//                maxLen = Math.max(maxLen,i-start+1);
-//            }
-//        }
-//        return maxLen;
-//    }
     // 滑动窗口 未优化  未一次跳过重复的关键字 而是挨个跳过 复杂度o(2n)
 //    public int lengthOfLongestSubstring(String s) {
 //        int max = 1, temp;
