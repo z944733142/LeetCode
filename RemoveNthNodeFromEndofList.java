@@ -13,7 +13,7 @@ public class RemoveNthNodeFromEndofList {
         {
             a1 = a1.next;
         }
-        while (a1.next != null &&)
+        while (a1.next != null)
         {
             a1 = a1.next;
             a2 = a2.next;
