@@ -1,4 +1,7 @@
 package Algorithms;
+
+import java.util.Scanner;
+
 /*
 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
 
@@ -15,34 +18,27 @@ package Algorithms;
  */
 public class BestTimetoBuyandSellStockII {
     public static void main(String[] args) {
-        maxProfit(new int[]{7,1,5,3,6,4});
-    }
-    public static int maxProfit(int[] prices) {
-        int money = 0;
-        int gain = 0;
-        int k = 1;
-        for (int i = 0, j; i < prices.length; i++) {
-            if( (i - 1 < 0 || prices[i] <= prices[i - 1] ) && (i + 1 >= prices.length || prices[i] <= prices[i + 1]))
-            {
-                    if(money == 0)
-                    {
-                        k = 1;
-                    }
-                    else {
-                        k = money / prices[i];
-                        money = money - k * prices[i];
-                    }
-                for (j = i; j < prices.length; j++) {
-                    if( (j - 1 >= 0 || prices[j] >= prices[j - 1] ) && (j + 1 >= prices.length || prices[j] >= prices[j + 1]))
-                    {
-                        money += prices[j] * k;
-                        gain += (prices[j] - prices[i]) * k;
-                        break;
-                    }
-                }
-                i = j;
-            }
+        Scanner scanner = new Scanner(System.in);
+        int a  = scanner.nextInt();
+        int prices[] = new int[a];
+        for (int i = 0; i < a; i++) {
+            prices[i] = scanner.nextInt();
         }
-        return gain;
+        int maxprofit = 0;
+        int num = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > prices[i - 1]) {
+                maxprofit += prices[i] - prices[i - 1];
+            }
+            if(i < prices.length - 1)
+            {
+                if((i - 1 == 0 || prices[i] < prices [i - 1]) && prices[i] < prices[i + 1])
+                {
+                    num++;
+                }
+            }
+
+        }
+        System.out.println(maxprofit + " " + num * 2);
     }
 }
