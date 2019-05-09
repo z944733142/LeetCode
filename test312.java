@@ -1,6 +1,4 @@
-package Algorithms;
-
-import com.sun.deploy.util.StringUtils;
+package algorithms;
 
 import java.util.*;
 

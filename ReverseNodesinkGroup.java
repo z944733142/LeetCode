@@ -1,4 +1,4 @@
-package Algorithms;
+package algorithms;
 
 /*
 给出一个链表，每 k 个节点一组进行翻转，并返回翻转后的链表。

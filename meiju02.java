@@ -1,8 +1,4 @@
-package Algorithms;
-
-import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.LinkedList;
+package algorithms;
 
 public class meiju02 {
     static int tool[] = {0, 0, 0};

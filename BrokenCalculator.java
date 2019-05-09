@@ -1,4 +1,4 @@
-package Algorithms;
+package algorithms;
 /*
 在显示着数字的坏计算器上，我们可以执行以下两种操作：
 
