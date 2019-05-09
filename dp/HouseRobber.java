@@ -24,7 +24,8 @@ package algorithms.dp;
 public class HouseRobber {
     public int rob(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
-            nums[i] = Math.max(i - 1 < 0 ?  0 : nums[i - 1], i - 2 < 0 ? nums[i] : nums[i - 2] + nums[i]);
+            nums[i] = Math.max(i - 1 < 0 ?  0 : nums[i - 1]
+                    , i - 2 < 0 ? nums[i] : nums[i - 2] + nums[i]);
         }
         return nums.length == 0 ? 0 : nums[nums.length - 1];
     }

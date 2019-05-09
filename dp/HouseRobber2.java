@@ -29,12 +29,15 @@ public class HouseRobber2 {
     public int rob(int[] nums) {
         int[] nums2 = nums.clone();
         for (int i = 0; i < nums.length - 1; i++) {
-            nums[i] = Math.max(i - 1 < 0 ?  0 : nums[i - 1], i - 2 < 0 ? nums[i] : nums[i - 2] + nums[i]);
+            nums[i] = Math.max(i - 1 < 0 ?  0 : nums[i - 1]
+                    , i - 2 < 0 ? nums[i] : nums[i - 2] + nums[i]);
         }
         for (int i = 1; i < nums2.length; i++) {
-            nums2[i] = Math.max(i - 1 <= 0 ?  0 :nums2[i - 1], i - 2 <= 0 ? nums2[i] : nums2[i - 2] + nums2[i]);
+            nums2[i] = Math.max(i - 1 <= 0 ?  0 :nums2[i - 1]
+                    , i - 2 <= 0 ? nums2[i] : nums2[i - 2] + nums2[i]);
         }
-        return nums.length == 0 ? 0 : nums.length == 1 ? nums[nums.length - 1] : Math.max(nums[nums.length - 2], nums2[nums2.length - 1]);
+        return nums.length == 0 ? 0 : nums.length == 1
+                ? nums[nums.length - 1] : Math.max(nums[nums.length - 2], nums2[nums2.length - 1]);
     }
 }
 
