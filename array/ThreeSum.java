@@ -23,6 +23,10 @@ import java.util.List;
  */
 public class ThreeSum {
 
+    public static void main(String[] args) {
+        int[] nums = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        threeSum(nums);
+    }
     /**
      * 超时  时间复杂度O(n^2)  其中一次遍历需要改为哈希
      * @param nums
@@ -35,16 +39,31 @@ public class ThreeSum {
             return lists;
         }
         Arrays.sort(nums);
-        for (int i = 0; i < nums.length; i++)
+        for (int i = 0; i < nums.length - 2; i++)
         {
+            // 去重
+            if(i > 0 && nums[i] == nums[i - 1])
+            {
+                continue;
+            }
             for(int j = i + 1, k = nums.length - 1 ;j < k;)
             {
                 int sum = nums[i] + nums[j] + nums[k];
                 if(sum > 0)
                 {
+                    // 去重
+                    while (j < k && nums[k] == nums[k - 1])
+                    {
+                        k--;
+                    }
                     k--;
                 }else if(sum < 0)
                 {
+                    // 去重
+                    while (j < k && nums[j + 1] == nums[j])
+                    {
+                        j++;
+                    }
                     j++;
                 }else
                 {
@@ -52,16 +71,21 @@ public class ThreeSum {
                     list.add(nums[i]);
                     list.add(nums[j]);
                     list.add(nums[k]);
-                    if(!lists.contains(list)) {
-                        lists.add(list);
+                    lists.add(list);
+                    while (j < k && nums[k] == nums[k - 1])
+                    {
+                        k--;
                     }
-                    if(sum < 0) {
-                        break;
+                    while (j < k && nums[j + 1] == nums[j])
+                    {
+                        j++;
                     }
                     k--;
+                    j++;
                 }
             }
         }
         return lists;
     }
 }
+
