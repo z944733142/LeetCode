@@ -32,7 +32,7 @@ public class ThreeSum {
      * @param nums
      * @return
      */
-    public List<List<Integer>> threeSum(int[] nums) {
+    public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> lists = new ArrayList<>();
         if(nums.length < 3)
         {
