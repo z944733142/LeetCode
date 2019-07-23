@@ -28,7 +28,7 @@ import java.util.Set;
  * 输入: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
  * 输出: false
  *
- * 思路: 动态规划减少重复回溯计算.
+ * 思路: 记录数组减少重复回溯计算.
  * 注: 用substring比Stringbuilder效率高
  * @author: shuo
  * @date: 2019/06/26
@@ -45,7 +45,7 @@ public class WordBreak {
 
         for(int j = i; j < s.length(); j++)
         {
-            if(keys[j] == true)
+            if(keys[j])
             {
                 continue;
             }
