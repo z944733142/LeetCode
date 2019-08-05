@@ -19,7 +19,7 @@ import java.util.*;
 public class GroupAnagrams {
 
     public List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> resultList = new ArrayList<>();
+        List<List<String>> resultList = new ArrayList();
         Map<String, List> map = new HashMap();
         for (int i = 0; i < strs.length; i++) {
             char[] c= strs[i].toCharArray();

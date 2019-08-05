@@ -14,11 +14,11 @@ public class Subsets {
 
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> lists = new LinkedList<List<Integer>>();
-        lists.add(new LinkedList<>());
+        lists.add(new LinkedList());
         for (int i = 0; i < nums.length; i++) {
             List<List<Integer>> temp = new LinkedList<List<Integer>>();
             for (List<Integer> integers : lists) {
-                List<Integer> list1 = new LinkedList<>(integers);
+                List<Integer> list1 = new LinkedList<Integer>(integers);
                 temp.add(list1);
                 integers.add(nums[i]);
             }

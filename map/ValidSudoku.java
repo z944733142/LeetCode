@@ -31,9 +31,9 @@ public class ValidSudoku {
         Map<Integer, Integer> columns[] = new HashMap[9];
         Map<Integer, Integer> box[] = new HashMap[9];
         for (int i = 0; i < 9; i++) {
-            rows[i] = new HashMap<>();
-            columns[i] = new HashMap<>();
-            box[i] = new HashMap<>();
+            rows[i] = new HashMap<Integer, Integer>();
+            columns[i] = new HashMap<Integer, Integer>();
+            box[i] = new HashMap<Integer, Integer>();
         }
         for(int i = 0; i < 9; i++)
         {

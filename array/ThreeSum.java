@@ -33,7 +33,7 @@ public class ThreeSum {
      * @return
      */
     public static List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> lists = new ArrayList<>();
+        List<List<Integer>> lists = new ArrayList();
         if(nums.length < 3)
         {
             return lists;
@@ -67,7 +67,7 @@ public class ThreeSum {
                     j++;
                 }else
                 {
-                    List<Integer> list = new ArrayList<>();
+                    List<Integer> list = new ArrayList<Integer>();
                     list.add(nums[i]);
                     list.add(nums[j]);
                     list.add(nums[k]);

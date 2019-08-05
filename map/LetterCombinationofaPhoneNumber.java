@@ -19,7 +19,7 @@ import java.util.Map;
 public class LetterCombinationofaPhoneNumber {
     private static Map<String, String> phone;
     public List<String> letterCombinations(String digits) {
-        List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList();
         if(digits.equals(""))
         {
             return list;

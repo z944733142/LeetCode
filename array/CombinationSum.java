@@ -30,8 +30,8 @@ candidates 中的数字可以无限制重复被选取。
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         Arrays.sort(candidates);
-        List<List<Integer>> lists = new ArrayList<>();
-        find(candidates, 0, 0, target,new ArrayList<>(), lists);
+        List<List<Integer>> lists = new ArrayList();
+        find(candidates, 0, 0, target,new ArrayList(), lists);
         return lists;
     }
 
@@ -59,19 +59,19 @@ candidates 中的数字可以无限制重复被选取。
                 sum -= candiates[i];
         }
     }
-    //    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+    //    public list<list<Integer>> combinationSum2(int[] candidates, int target) {
 //        Arrays.sort(candidates);
-//        List<List<Integer>> lists = new ArrayList<>();
+//        list<list<Integer>> lists = new ArrayList<>();
 //        find(candidates, 0, 0, target,new ArrayList<>(), lists);
 //        return lists;
 //    }
 //
-//    public void find (int [] candiates, int sum,int j,int target, List<Integer> list, List<List<Integer>> lists)
+//    public void find (int [] candiates, int sum,int j,int target, list<Integer> list, list<list<Integer>> lists)
 //    {
 //        if(sum == target)
 //        {
 //            if(!lists.contains(list)) {
-//                lists.add((List<Integer>) ((ArrayList) list).clone());
+//                lists.add((list<Integer>) ((ArrayList) list).clone());
 //            }
 //            return;
 //        }
@@ -81,7 +81,7 @@ candidates 中的数字可以无限制重复被选取。
 //                if(sum > target)
 //                    return;
 //                list.add(candiates[i]);
-//                find(candiates, sum, i + 1,target, (List<Integer>)((ArrayList)list).clone(), lists);
+//                find(candiates, sum, i + 1,target, (list<Integer>)((ArrayList)list).clone(), lists);
 //                list.remove((Integer) candiates[i]);
 //                sum -= candiates[i];
 //        }

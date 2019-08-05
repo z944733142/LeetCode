@@ -27,7 +27,7 @@ public class MergeIntervals {
                 return o1[0] - o2[0];
             }
         });
-        List<int[]> list = new ArrayList<>();
+        List<int[]> list = new ArrayList();
         boolean key = false;
         for (int i = 0; i < intervals.length; i++) {
             if(i == intervals.length - 1 || intervals[i][1] < intervals[i + 1][0] )

@@ -26,7 +26,7 @@ public class Permutations2 {
     }
     public static List<List<Integer>> permute(int[] nums) {
         boolean status[] = new boolean[nums.length];
-        List<List<Integer>> lists = new LinkedList<>();
+        List<List<Integer>> lists = new LinkedList();
         DFS(status, nums, lists, new LinkedList<Integer>());
         return lists;
     }

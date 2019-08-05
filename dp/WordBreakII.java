@@ -31,7 +31,7 @@ public class WordBreakII {
     public static List<String> wordBreak(String s, List<String> wordDict) {
         Set<String> set = new HashSet(wordDict);
         boolean[] keys = new boolean[s.length()];
-        List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<String>();
         find(list, s, keys, new StringBuilder(), set, 0);
         return list;
     }

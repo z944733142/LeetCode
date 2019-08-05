@@ -16,7 +16,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
         new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("abba");
     }
     public int lengthOfLongestSubstring(String s) {
-        HashMap<Character, Integer> hashMap = new HashMap<>();
+        HashMap<Character, Integer> hashMap = new HashMap();
         int max = 0;
         for(int i = 0, j = 0; j < s.length(); j++)
         {
