@@ -1,4 +1,4 @@
-package algorithms.link;
+package algorithms.linklist;
 
 /**
  * @author: shuo

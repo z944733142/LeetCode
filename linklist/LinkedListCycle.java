@@ -1,6 +1,4 @@
-package algorithms.link;
-
-import algorithms.link.ListNode;
+package algorithms.linklist;
 
 /*
 给定一个链表，判断链表中是否有环。

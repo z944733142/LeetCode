@@ -1,7 +1,5 @@
-package algorithms.link;
+package algorithms.linklist;
 
-
-import algorithms.link.ListNode;
 
 public class SwapNodesInPairs {
     public static void main(String[] args) {
