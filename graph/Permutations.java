@@ -1,53 +1,53 @@
-package algorithms.map;
+package algorithms.graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 给定一个可包含重复数字的序列，返回所有不重复的全排列。
+ * Given a collection of distinct integers, return all possible permutations.
  *
- * 示例:
+ * Example:
  *
- * 输入: [1,1,2]
- * 输出:
+ * Input: [1,2,3]
+ * Output:
  * [
- *   [1,1,2],
- *   [1,2,1],
- *   [2,1,1]
+ *   [1,2,3],
+ *   [1,3,2],
+ *   [2,1,3],
+ *   [2,3,1],
+ *   [3,1,2],
+ *   [3,2,1]
  * ]
- *
  * @author: shuo
- * @date: 2019/06/19
+ * @date: 2019/05/28
  */
-public class Permutations2 {
+public class Permutations {
     public static void main(String[] args) {
         System.out.println(permute(new int[]{2, 2, 1, 1}));
     }
     public static List<List<Integer>> permute(int[] nums) {
         boolean status[] = new boolean[nums.length];
-        List<List<Integer>> lists = new LinkedList();
+        List<List<Integer>> lists = new LinkedList<List<Integer>>();
         DFS(status, nums, lists, new LinkedList<Integer>());
         return lists;
     }
 
     public static void DFS(boolean[] status, int[] nums, List<List<Integer>> lists, List<Integer> list){
-
+        List list1 = new ArrayList(list);
         for (int j = 0; j < status.length; j++) {
             if(!status[j])
             {
                 status[j] = true;
-                int size = list.size();
-                list.add(size, nums[j]);
-                DFS(status, nums, lists, list);
-                if(list.size() == nums.length && !lists.contains(list))
-                {
-
-                    lists.add(new ArrayList(list));
-//                    return;
-                }
-                list.remove(size);
+                list1.add(nums[j]);
+                DFS(status, nums, lists, list1);
                 status[j] = false;
+                if(list1.size() == nums.length)
+                {
+                    lists.add(list1);
+                    return;
+                }
+                list1.remove(list1.remove(list1.size() - 1));
             }
         }
 
